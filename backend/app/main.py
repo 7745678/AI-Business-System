@@ -1,4 +1,11 @@
+from app.routes.customers import router as customers_router
+from app.routes.suppliers import router as suppliers_router
+
+
+app.include_router(customers_router)
+app.include_router(suppliers_router)
 from fastapi import FastAPI
+
 
 from app.database_init import create_tables
 from app.routes.customers import router as customers_router
