@@ -1,6 +1,6 @@
 from app.routes.customers import router as customers_router
 from app.routes.suppliers import router as suppliers_router
-
+from app.routes.transactions import router as transactions_router
 
 app.include_router(customers_router)
 app.include_router(suppliers_router)
