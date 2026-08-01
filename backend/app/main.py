@@ -1,10 +1,18 @@
 from fastapi import FastAPI
 
+from app.database_init import create_tables
+
+
 app = FastAPI(
     title="AI Accounting ERP",
     description="Smart accounting system for merchants and distributors",
     version="0.1.0"
 )
+
+
+@app.on_event("startup")
+def startup_event():
+    create_tables()
 
 
 @app.get("/")
